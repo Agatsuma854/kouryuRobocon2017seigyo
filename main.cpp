@@ -59,6 +59,7 @@ Serial
 */
 
 void stop(){
+	debugY = 0;
 	debugR = 1;
 }
 
