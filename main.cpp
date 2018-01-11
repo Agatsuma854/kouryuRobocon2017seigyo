@@ -125,8 +125,6 @@ void move(){
 
 void loop(){
 	while(1){
-		debugY = debugG = debugR = 0;
-
 		if(serial()){
 		 move();
 		}else{
