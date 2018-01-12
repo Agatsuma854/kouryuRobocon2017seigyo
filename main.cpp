@@ -1,7 +1,7 @@
 #include "mbed/mbed.h"
 
 Serial ch1(p13,p14); //T送R受
-DigitalOut debugG(p6),debugY(p7),debugR(p8),frontRightMot(P2_6),frontLeftMot(P2_7),rearRightMot(P2_8),frontLeftMot(P2_10);
+DigitalOut debugG(p6),debugY(p7),debugR(p8),frontRightMot(P2_6),frontLeftMot(P2_7),rearRightMot(P2_8),rearLeftMot(P2_10);
 PwmOut frontRightSpeed(p26),frontLeftSpeed(p25),rearRightSpeed(p24),rearLeftSpeed(p23);
 
 
@@ -108,8 +108,36 @@ int serial(){
 return 0;
 }
 
-void motor(){
+/*モーターの出力とドライバーの制御
 
+frontRightSpeed.write(0);
+frontRightMot = 1;
+
+frontLeftSpeed.write(0);
+frontLeftMot = 1
+
+rearRightSpeed.write(0);
+rearRightMot = 1
+
+rearLeftSpeed.write(0);
+rearLeftMot = 1;
+*/
+
+void motor(){//InData[1]X //InData[2]Y << leftStic
+	if(InData[1] < 127){
+
+			frontRightSpeed.write((127 - InData[1])/(127));
+			frontRightMot = 1;
+
+			frontLeftSpeed.write((127 - InData[1])/(127));
+			frontLeftMot = 1;
+
+			rearRightSpeed.write((127 - InData[1])/(127));
+			rearRightMot = 1;
+
+			rearLeftSpeed.write((127 - InData[1])/(127));
+			rearLeftMot = 1;
+	}
 }
 
 void action(){
