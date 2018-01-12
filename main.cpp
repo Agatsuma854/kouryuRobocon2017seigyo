@@ -85,9 +85,8 @@ int serial(){
 			InData[0] = ch1.getc();
 
 			if(InData[0] == 0xAF){
-				InData[10] = 0;
 
-				for(i = 1;InData[10] == 0 && i < 11;i++){
+				for(i = 1;i < 11;i++){
 					InData[i] = ch1.getc();
 				}
 
@@ -98,10 +97,7 @@ int serial(){
 			}
 		}
 
-	}else{
-		debugY = 1; //通信遮断
 	}
-
 return 0;
 }
 
