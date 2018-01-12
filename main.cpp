@@ -1,14 +1,21 @@
 #include "mbed/mbed.h"
 
 Serial ch1(p13,p14); //T送R受
-DigitalOut debugG(p6),debugY(p7),debugR(p8);
+DigitalOut debugG(p6),debugY(p7),debugR(p8),frontRightMot(P2_6),frontLeftMot(P2_7),rearRightMot(P2_8),frontLeftMot(P2_10);
+PwmOut frontRightSpeed(p26),frontLeftSpeed(p25),rearRightSpeed(p24),rearLeftSpeed(p23);
+
 
 //unsigned char InData[11];
 int sum,InData[11];
 
 void setUp(){
 	ch1.baud(38400);
-	debugR = debugY = debugG = 0;
+	debugR = debugY = debugG = frontRightMot = frontLeftMot =  rearRightMot = rearLeftMot = 0;
+
+	frontRightSpeed.write(0);
+	frontLeftSpeed.write(0);
+	rearRightSpeed.write(0);
+	rearLeftSpeed.write(0);
 }
 
 /*Assign    7~8byteは格bitにボタンのon/offが入る(他は可変抵抗)
@@ -81,7 +88,7 @@ int serial(){
 	if(ch1.readable()){
 		int numNot,i = 0;
 
-		for(numNot = 0;numNot <= 12;numNot++){
+		for(numNot = 0;numNot < 12;numNot++){
 			InData[0] = ch1.getc();
 
 			if(InData[0] == 0xAF){
@@ -113,7 +120,7 @@ void action(){
 }
 
 void move(){
-	//motor();
+	motor();
 	action();
 }
 

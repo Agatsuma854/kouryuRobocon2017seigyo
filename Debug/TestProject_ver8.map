@@ -2273,15 +2273,15 @@ END GROUP
                 0x10008000                PROVIDE (_vStackTop, (__top_RamLoc32 - 0x0))
 OUTPUT(TestProject_ver8.axf elf32-littlearm)
 
-.debug_info     0x00000000     0x3e95
- .debug_info    0x00000000     0x34c5 ./main.o
- .debug_info    0x000034c5      0x966 c:/nxp/mcuxpressoide_10.1.0_589/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_newlib_nohost.a(_cr_sbrk.o)
- .debug_info    0x00003e2b       0x6a c:/nxp/mcuxpressoide_10.1.0_589/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_newlib_nohost.a(_cr_check_heap.o)
+.debug_info     0x00000000     0x3e9e
+ .debug_info    0x00000000     0x34ce ./main.o
+ .debug_info    0x000034ce      0x966 c:/nxp/mcuxpressoide_10.1.0_589/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_newlib_nohost.a(_cr_sbrk.o)
+ .debug_info    0x00003e34       0x6a c:/nxp/mcuxpressoide_10.1.0_589/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_newlib_nohost.a(_cr_check_heap.o)
 
-.debug_abbrev   0x00000000      0xa06
- .debug_abbrev  0x00000000      0x781 ./main.o
- .debug_abbrev  0x00000781      0x223 c:/nxp/mcuxpressoide_10.1.0_589/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_newlib_nohost.a(_cr_sbrk.o)
- .debug_abbrev  0x000009a4       0x62 c:/nxp/mcuxpressoide_10.1.0_589/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_newlib_nohost.a(_cr_check_heap.o)
+.debug_abbrev   0x00000000      0xa00
+ .debug_abbrev  0x00000000      0x77b ./main.o
+ .debug_abbrev  0x0000077b      0x223 c:/nxp/mcuxpressoide_10.1.0_589/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_newlib_nohost.a(_cr_sbrk.o)
+ .debug_abbrev  0x0000099e       0x62 c:/nxp/mcuxpressoide_10.1.0_589/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_newlib_nohost.a(_cr_check_heap.o)
 
 .debug_loc      0x00000000      0x2bf
  .debug_loc     0x00000000      0x246 ./main.o
